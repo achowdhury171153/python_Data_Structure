@@ -1,0 +1,21 @@
+from typing import List
+
+
+class Solution:
+    def search(nums: List[int], target: int) -> int:
+        nums.sort()
+        low = 0
+        high = len(nums)-1
+
+        while(low<=high):
+            mid = int((low + high) / 2)
+            if target == nums[mid]:
+                return mid
+            elif target < nums[mid]:
+                high = mid -1
+            else:
+                low =mid +1
+
+        return -1
+array=[-1,0,3,5,9,12]
+print(Solution.search(array,0))
