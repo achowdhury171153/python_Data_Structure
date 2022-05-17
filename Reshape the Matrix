@@ -1,0 +1,10 @@
+class Solution:
+    def matrixReshape(self, mat: List[List[int]], r: int, c: int) -> List[List[int]]:
+        matrix_data = len(mat) * len(mat[0])
+        matrix_row=len(mat)
+        flat=sum(mat, [])
+        #print(mat)
+        if r*c == matrix_data:
+            return [flat[i:i+c] for i in range(0,matrix_data, c)]
+        else:
+            return mat
