@@ -1,0 +1,14 @@
+class Solution:
+    def firstUniqChar(s: str) -> int:
+      f={}
+      for i in s:
+        if i not in f:
+            f[i] = 1
+        else:
+            f[i] += 1
+      for i in f:
+          if f[i] == 1:
+              return s.index(i)
+      return -1
+
+print(Solution.firstUniqChar("aabb"))
